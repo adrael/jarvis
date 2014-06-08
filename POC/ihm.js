@@ -20,6 +20,16 @@ IHM.prototype.eval = function(answer) {
 	this.run();
 };
 
+IHM.prototype.continue = function() {
+	document.querySelector(".again").style.display = "none";
+	document.querySelector(".continue").style.display = "none";
+	
+	document.querySelector(".oui").style.display = "initial";
+	document.querySelector(".non").style.display = "initial";
+
+	this.run();
+};
+
 IHM.prototype.run = function() {
 	var interaction = this.engine.process(this.currentCategory);
 

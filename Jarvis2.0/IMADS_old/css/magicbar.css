@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'Tit Light';
+    font-style: normal;
+    font-weight: 200;
+    src: local("Tit Light"),
+    	 local("Tit Light"),
+    	 url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v1/anMUvcNT0H1YN4FII8wpr3XqdloEk0Ij5qwGW4qO9RM.woff) format("woff");
+}
+
+@keyframes caret {
+    50% {
+        opacity: 0.1;
+        transform: scaleY(0.8);
+    }
+}
+
+@-o-keyframes caret {
+    50% {
+        opacity: 0.1;
+        -webkit-transform: scaleY(0.8);
+    }
+}
+
+@-ms-keyframes caret {
+    50% {
+        opacity: 0.1;
+        -webkit-transform: scaleY(0.8);
+    }
+}
+
+@-moz-keyframes caret {
+    50% {
+        opacity: 0.1;
+        -webkit-transform: scaleY(0.8);
+    }
+}
+
+@-webkit-keyframes caret {
+    50% {
+        opacity: 0.1;
+        -webkit-transform: scaleY(0.8);
+    }
+}
+
+#magicbar {
+    text-align: left;
+    margin: 0 auto 0 auto;
+    border: none;
+    width: 990px;
+    height: 43px;
+    max-height: 43px;
+    letter-spacing: -1px;
+    white-space: nowrap;
+    font-family: 'Tit Light';
+    font-size: 1.5em;
+    color: #D0AB54;
+    position: relative;
+    padding: 8px 0 0 13px;
+    -webkit-text-stroke: .25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#actualQuote {
+    border-bottom: 1px solid #292929;
+    text-shadow: 1px -1px 6px rgba(255, 255, 255, 1);
+}
+
+div .caret {
+    opacity: .8;
+    box-shadow: 0 0 10px #D0AB54;
+    -webkit-animation: 0.4s 40ms caret infinite;
+    -moz-animation: 0.4s 40ms caret infinite;
+    -ms-animation: 0.4s 40ms caret infinite;
+    -o-animation: 0.4s 40ms caret infinite;
+    animation: 0.4s 40ms caret infinite;
+}
+
+.caret {
+    width: 1px;
+    height: 25px;
+    margin-left: 5px;
+    background: #FFF;
+    border-top: none;
+    border-left: none;
+    border-radius: 2px;
+    font-weight: normal;
+    display: inline-block;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -moz-user-select: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-right: 1px solid transparent;
+}
+
+.oldQuote {
+    color: #D0AB54;
+    letter-spacing: -1px;
+    font-family: 'Tit Light';
+    font-size: inherit;
+    margin: 0 auto 0 auto;
+    text-shadow: 1px -1px 6px rgba(255, 255, 255, 1);
+}
+
+.rect {
+    width: 10px;
+    border-radius: none;
+    -o-border-radius: none;
+    -ms-border-radius: none;
+    -moz-border-radius: none;
+    -webkit-border-radius: none;
+}
+
+.orange {
+    background: #D0AB54;   
+}
+
+.categories {
+    font-family: 'Tit Light';
+}

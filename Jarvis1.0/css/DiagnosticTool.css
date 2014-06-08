@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+#diagnosticBox, #blurredBackgroundFader {
+	opacity: 0;
+	visibility: hidden;
+}
+
+#diagnosticBox {
+	z-index: 9999;
+    position: absolute;
+    width: 798px;
+    height: 398px;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -200px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border: 2px solid rgba(66, 139, 202, .5);
+    font-family: 'Inconsolata', sans-serif;
+}
+
+#screenCode, #loadingDiagnostic {
+    width: 800px;
+    height: 400px;
+    color: #14FF00;
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+    text-shadow: 1px 0px 5px rgba(150, 255, 150, .7), 0px 1px 5px rgba(150, 255, 150, .7), 0px -1px 5px rgba(150, 255, 150, .7), -1px 0px 5px rgba(150, 255, 150, .7);
+}
+
+#screenCode {
+    font-size: .7em;
+    text-align: left;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#loadingDiagnostic {
+    font-size: 2em;
+    text-align: center;
+}
+
+#blurredBackgroundFader:before {
+	z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+
+    background: url(../img/diagnostics/main_faded.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+    -webkit-filter: blur(5px);
+  	-moz-filter: blur(5px);
+  	-ms-filter: blur(5px);
+  	-o-filter: blur(5px);
+  	filter: blur(5px);
+
+}
+
+#blurredBackgroundFader {
+	z-index: 9998;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
