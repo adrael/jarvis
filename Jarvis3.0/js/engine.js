@@ -8,7 +8,7 @@ function Engine () {
 Engine.prototype.isDiagnostic = function(id, category) {
 	var diagnostics = structure[category ? category : this.currentCategory].diagnostics;
 	for(var i in diagnostics) {
-		if(diagnostics[i].id === id) {
+		if(diagnostics[i].id === id || '!' + diagnostics[i].id === id) {
 			return true;
 		}
 	}
@@ -41,6 +41,17 @@ Engine.prototype.getPromisesFor = function(diagnosticId, category) {
 	for(var i in diagnostics) {
 		if(diagnostics[i].id === diagnosticId) {
 			return diagnostics[i].validFor;
+		} else if('!' + diagnostics[i].id === diagnosticId) {
+			var newValidFor = [];
+			for(var j in diagnostics[i].validFor) {
+				if(diagnostics[i].validFor[j][0] === '!') {
+					newValidFor.push(diagnostics[i].validFor[j].replace('!', ''));
+				} else {
+					newValidFor.push('!' + diagnostics[i].validFor[j]);
+				}
+			}
+
+			return newValidFor;
 		}
 	}
 
@@ -107,13 +118,19 @@ Engine.prototype.infer = function() {
 			if(valid) {
 				result.type = "diagnostic";
 				result.label = diagnostic.label;
+				result.isFinal = diagnostic.isFinal ? true : false;
 				diagnostic.asked = true;
 				return result;
 			}
 		}
 	}
 
-	return null;
+	result.type = "diagnostic";
+	result.label = 'Aucun diagnostic trouvé... Problem exists between keyboard and chair, you know...';
+	result.isFinal = true;
+	result.error = true;
+
+	return  result;
 };
 
 Engine.prototype.process = function(category) {

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>J.A.R.V.I.S &mdash; POC</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="bold">J.A.R.V.I.S</h1>
+
+		<div class="question well well-lg"></div>
+
+		<h3>&mdash; Proof Of Concept</h3>
+
+		<div class="actions">
+			<button class="oui btn btn-lg btn-success" onclick="ihm.eval(1)">Oui</button>
+			<button class="non btn btn-lg btn-danger"  onclick="ihm.eval(2)">Non</button>
+
+			<button class="again btn btn-lg btn-primary"    onclick="ihm.startOver()">Recommencer</button>
+			<button class="continue btn btn-lg btn-warning" onclick="ihm.continue()">Continuer</button>
+		</div>
+		<div class="past"></div>
+	</div>
+
+	<script type="text/javascript" src="js/finalStructure.js"></script>
+	<!-- <script type="text/javascript" src="js/structure.js"></script> -->
+	<script type="text/javascript" src="js/engine.js"></script>
+	<script type="text/javascript" src="js/ihm.js"></script>
+
+	<script type="text/javascript">
+		var ihm = new IHM();
+		ihm.initialize();
+	</script>
+</body>
+</html>

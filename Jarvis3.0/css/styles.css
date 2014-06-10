@@ -1,0 +1,46 @@
+body {
+	padding: 100px;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h3 {
+	margin-top: -15px;
+	float: right;
+}
+
+button.again, button.continue {
+	display: none;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.well {
+	font-size: 1.5em;
+}
+
+.well-success {
+	background-color: rgba(0, 255, 0, .1);
+}
+
+.well-danger {
+	background-color: rgba(255, 0, 0, .1);
+}
+
+.actions {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.actions button {
+	width: 200px;
+	outline: 0 !important;
+}
+
+.past {
+	margin-top: 50px; 
+}
