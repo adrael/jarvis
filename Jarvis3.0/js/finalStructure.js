@@ -47,5 +47,20 @@ var structure = {
 			{id: "d19", label: "Essayer encore et encore, c'est la clé de la réussite...", validFor: ["q17", "q18", "q19", "q20", "q21", "q22"], isFinal: true},
 			{id: "d20", label: "Après tout, la musique, à quoi ça sert ? ;)", validFor: ["q17", "q18", "q19", "q20", "q21", "!q22"], isFinal: true}
 		]
+	},
+
+	weapon: {
+		questions: [],
+		diagnostics: []
+	},
+
+	flight: {
+		questions: [],
+		diagnostics: []
+	},
+
+	power: {
+		questions: [],
+		diagnostics: []
 	}
 };

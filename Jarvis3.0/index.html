@@ -11,17 +11,22 @@
 	<div class="container">
 		<h1 class="bold">J.A.R.V.I.S</h1>
 
-		<div class="question well well-lg"></div>
+		<div class="categories well well-lg">
+			<p>Veuillez choisir une catégorie pour commencer le diagnostic</p>
+		</div>
+
+		<div class="question invisible well well-lg"></div>
 
 		<h3>&mdash; Proof Of Concept</h3>
 
-		<div class="actions">
+		<div class="actions invisible">
 			<button class="oui btn btn-lg btn-success" onclick="ihm.eval(1)">Oui</button>
 			<button class="non btn btn-lg btn-danger"  onclick="ihm.eval(2)">Non</button>
 
 			<button class="again btn btn-lg btn-primary"    onclick="ihm.startOver()">Recommencer</button>
 			<button class="continue btn btn-lg btn-warning" onclick="ihm.continue()">Continuer</button>
 		</div>
+		
 		<div class="past"></div>
 	</div>
 

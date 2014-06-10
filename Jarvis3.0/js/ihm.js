@@ -1,19 +1,42 @@
 function IHM () {
 	this.container = undefined;
 	this.question = undefined;
+	this.past = undefined;
+	this.categories = undefined;
 
-	this.currentCategory = "music";
-
-	this.engine = null;
+	this.engine = new Engine();
 }
 
 IHM.prototype.initialize = function() {
 	this.container = document.querySelector("div.container");
 	this.question = document.querySelector("div.container div.question");
 	this.past = document.querySelector('div.container div.past');
+	this.categories = document.querySelector('div.container div.categories');
 
-	this.engine = new Engine();
+	for(var i in structure) {
+		var btn = document.createElement('button');
+		btn.className = 'btn btn-lg btn-info';
+		btn.innerHTML = i;
+		btn.setAttribute('onclick', "ihm.launchEngine('" + i + "')");
+		this.categories.appendChild(btn);
+	}
+};
+
+IHM.prototype.launchEngine = function(category) {
+	this.setCategory(category);
+	var invisibles = document.querySelectorAll('.invisible');
+	this.categories.className += ' invisible';
+
+	for(var i in invisibles) {
+		if(typeof invisibles[i] === 'object')
+			invisibles[i].className = invisibles[i].className.replace('invisible', '');
+	}
+
 	this.run();
+};
+
+IHM.prototype.setCategory = function(category) {
+	this.currentCategory = category;
 };
 
 IHM.prototype.eval = function(answer) {
