@@ -57,3 +57,102 @@ button.again, button.continue {
 	margin: 10px;
 	outline: 0 !important;
 }
+
+.article {
+	margin: 50px;
+	text-align: justify;
+	padding: 50px;
+}
+
+.article a,
+.article a:hover,
+.article a:visited,
+.article a:focus {
+	font-family: 'Arial', 'Trebuchet MS', sans-serif;
+	color: #428bca;
+}
+
+.article a.h1 {
+	font-size: 1.5em;
+}
+
+.article a.h2 {
+	font-size: 1.2em;
+}
+
+.article a.h3 {
+	font-size: 1em;
+}
+
+.article ul.plan,
+.article ul.plan ul {
+	list-style-type: none;
+	line-height: 1.8em;
+	font-size: 11pt;
+}
+
+.article ul.plan > li {
+	margin-top: 20px;
+}
+
+.article h1, .article h2, .article h3 {
+	font-family: 'Trebuchet MS', 'Arial', sans-serif;
+}
+
+.article h1 {
+	margin: 20px;
+	font-size: 1.8em;
+}
+
+.article h2 {
+	margin: 30px;
+	font-size: 1.3em;
+}
+
+.article h3 {
+	margin: 40px;
+	font-size: 1em;
+}
+
+.article p, .article ul:not(.plan) {
+	font-family: 'Arial', 'Trebuchet MS', sans-serif;
+	line-height: 1.8em;
+	font-size: 11pt;
+}
+
+.article p::first-letter {
+	margin-left: 20px;
+}
+
+.backToTop,
+.backToTop:hover,
+.backToTop:active,
+.backToTop:focus,
+.backToTop:visited {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 5em;
+  background-color: rgba(0, 0, 0, .3);
+  width: 100px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-left: 18px;
+  height: 100px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: none;
+}
+
+div#accordion {
+	margin-top: 50px;
+}
+
+.panel-heading {
+	text-align: center;
+}
+
+ol {
+	font-size: .8em;
+}

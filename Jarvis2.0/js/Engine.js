@@ -197,9 +197,9 @@ Engine.prototype.triggerNewQuestion = function(category) {
 	this.currentEvaluatedFact = factId;
 
 	if(answer.diagnostic) {
-		answer.label = (factId ? this.factBase.getFact(factId).getLabel() : "Impossible d'établir un diagnostic.");
+		answer.label = (factId ? this.factBase.getFact(factId).getLabel() : "Vous allez très bien milord !");
 	} else {
-		answer.label = (factId ? this.factBase.getFact(factId).getQuestion() : "Impossible d'établir un diagnostic.");
+		answer.label = (factId ? this.factBase.getFact(factId).getQuestion() : "Vous allez très bien milord !");
 	}
 
 	return answer;

@@ -3,9 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-	<title>J.A.R.V.I.S &mdash; POC</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>Projet &mdash; J.A.R.V.I.S</title>
+	<link rel="stylesheet" type="text/css" href="./libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
 	<div class="container">
@@ -28,16 +28,133 @@
 		</div>
 		
 		<div class="past"></div>
+
+		<div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            View article
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                        <section class="article well well-lg">
+                            <h1>Plan</h1>
+
+                            <ul class="plan">
+                                <li><a href="#intro" class="h1">Introduction</a></li>
+
+                                <li><a href="#systemesexperts" class="h1">Décisions grâce au Système Expert</a></li>
+                                <ul>    
+                                    <li><a href="#principe" class="h2">Principe d’un Système Expert</a></li>
+                                    <li><a href="#moteur" class="h2">Le moteur d’inférence</a></li>
+                                </ul>
+
+                                <li><a href="#systemeautre" class="h1">D'un système à l'autre</a></li>
+                                <ul>
+                                    <li><a href="#trad" class="h2">Le Système Expert traditionnel</a></li>
+                                    <li><a href="#nat" class="h2">Le Système Expert naturel</a></li>
+                                </ul>
+                            </ul>
+
+                            <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+                            <h1 id="intro">Introduction</h1>
+
+                            <p><strong>J</strong>ust <strong>A</strong> <strong>R</strong>ather <strong>V</strong>ery <strong>I</strong>ntelligent <strong>S</strong>ystem, ou plus communément connu sous le nom de J.A.R.V.I.S, est l’intelligence artificielle qui est chargée d’assister Iron Man dans ses aventures.</p>
+
+							<p>Notre mission dans ce projet, est de simuler l’intéraction de J.A.R.V.I.S sur un outil de diagnostic simple, avec un apprentissage supervisé. Il s’agit donc de concevoir un Système Expert capable de prendre en compte les informations utilisateur afin d’établir une stratégie de contournement du problème rencontré.</p>
+
+							<!-- -------------------------------------------------------------------------------------------------------------- -->
+
+                            <h1 id="systemesexperts">Décisions grâce au Système Expert</h1>
+
+                            <p>La définition du site <i>Wikipédia</i> concernant un Sytème Expert est la suivante :</p>
+
+							<blockquote>“ D'une manière générale, un système expert est un outil capable de reproduire les mécanismes cognitifs d'un expert, dans un domaine particulier. Il s'agit de l'une des voies tentant d'aboutir à l'intelligence artificielle. ”</blockquote>
+
+							<p>Cette définition s’applique parfaitement à notre cas, où justement, J.A.R.V.I.S, l’entité intelligente qui anime Iron Man, doit être capable d’analyser de façon experte le système et d’en déduire un diagnostic sans faille.</p>
+
+							<h2 id="principe">Principe d’un Système Expert</h2>
+
+							<p>Un système expert se divise en trois parties :</p>
+
+                            <ol>
+                                <li>Une base de faits</li>
+                                <li>Une base de règles</li>
+                                <li>Un moteur d’inférence</li>
+                            </ol>
+
+                            <p>Les trois parties susmentionnées fonctionnent de concert afin de délivrer un résultat répondant à une situtation donnée.</p>
+                            <p>Une règle est composée de faits et expose un autre fait, qui peut être conclusion et / ou premisse d’une autre règle. Le moteur d’inférence est donc chargé, quant à lui, d’itérer sur la base de règles en jouant avec les données “du monde réel” afin d’obtenir une conclusion finale, résultat logique de la situation représentée.</p>
+
+                            <h2 id="moteur">Le moteur d’inférence</h2>
+
+                            <p>Le moteur d’inférence est un outil propre à l’intelligence artificielle. Les premiers d’entre eux étaient partie entière des Systèmes Experts. Le Système Expert simple consiste en une base de connaissance, aussi appelée base de faits, et d’un moteur d’inférence. La base de connaissance contient des faits à propos du monde. Le moteur d’inférence applique des règles de logique de base sur la base de connaissance, en en déduit de nouvelles connaissances. Ce processus se répète d’autant plus que chacun des faits présent dans la base de connaissance possède la capacité de valider de nouvelles règles dans le moteur d’inférence.</p>
+
+                            <p>Le moteur d’inférence fonctionne principalement avec deux modes :</p>
+
+                            <ul>
+                                <li>le chaînage avant</li>
+                                <li>le chaînage arrière</li>
+                            </ul>
+
+                            <p>Le chaînage avant commence par les faits connus et en déduit de nouveaux faits, pouvant valider de nouvelles règles.
+                            <br>
+                            Le chaînage arrière commence avec les résultats, et remonte le chemin jusqu’à déterminer les faits qui doivent être validés pour atteindre l’objectif évalué.</p>
+
+                            <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+                            <h1 id="systemeautre">D'un système à l'autre</h1>
+
+                            <p>Alors que nous implémentions le Système Expert vu en cours et proposé par notre professeur, Mr. Ophir PAZ, nous nous sommes aperçus qu’une autre façon de faire était possible, et nous semblait être plus naturelle. Nous allons donc discuter les deux implémentations proposées dans les deux parties suivantes.</p>
+
+							<p>Dans un soucis de clarté, nous allons appellé le système vu en cours, <strong><i>Le Système Expert traditionnel</i></strong>, et celui que nous avons réalisé, <strong><i>Le Sytème Expert naturel.</i></strong></p>
+
+							<h2 id="trad">Le Système Expert traditionnel</h2>
+
+							<p>Simple et efficace, il peut toutefois mener à confusion lors de l’implémentation des règles. En effet, toutes les règles se ressemblent, qu’elles réalisent un diagnostic, un fait initial ou un simple fait. Et plus il y a de règles misent en place, plus dure devient la tâche : il faut savoir jongler entre les faits initaux et les faits terminaux, anticiper et comprendre la place qui sera prise par la règle que l’on est en train de concevoir, etc.</p>
+
+							<p>Du point de vue du moteur d’inférence, il s’agit de la compréhension qui peut rapidement se perdre dans une boucle éternelle. Il faut parcourir toutes les règles données, trouver celles qui établissent des faits initiaux, celles qui au contraire établissent des faits terminaux, et enfin celles qui ne font qu’amener vers l’un des deux précédents états. Tout ceci permettant, le moment venu, de trouver la question la plus adéquate à poser à l’utilisateur (dans le cadre d’un système supervisé seulement, sinon, il s’agirait d’un état à faire vérifier par le système).</p>
+
+							<h2 id="nat">Le Sytème Expert naturel</h2>
+
+							<p>Très similaire à son prédécesseur (un Système Expert ne peut être entièrement différent d’un autre de par sa nature même - ce ne serait pas un Système Expert sinon), sa différence se situe dans la simplicité de compréhension / lecture des règles et du moteur d’inférence.
+							<br>
+							Nous avons choisi de distinguer très clairement quelle serait les règles portant sur les faits initiaux / normaux, de celles ayant pour but d’établir un diagnostic (terminal ou non). Cette petite modification à elle seule permet d’allèger le concepteur de règle dans son travail, mais également le moteur d’inférence.</p>
+
+							<p>En effet, ce dernier est décharger de son rôle de sélection : fini le parcours complet dans le seul but de savoir qui est initial, terminal ou encore normal, le concepteur de règle lui à mâcher le travail ! Tout en conservant la possibilité de fonctionner par chaînage avant ou arrière. Dans notre projet, seul le chaînage arrière est implémenté. Le moteur va donc regarder les diagnostics qui lui sont proposé, et va établir les questions à poser au fur et à mesure afin de valider le diagnostic choisi.</p>
+
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 	</div>
 
-	<script type="text/javascript" src="js/finalStructure.js"></script>
-	<!-- <script type="text/javascript" src="js/structure.js"></script> -->
-	<script type="text/javascript" src="js/engine.js"></script>
-	<script type="text/javascript" src="js/ihm.js"></script>
+	<a onclick="toTop()" class="backToTop" title="Back to top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./libs/bootstrap/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="./js/main.js"></script>
+
+	<script type="text/javascript" src="./js/finalStructure.js"></script>
+	<!-- <script type="text/javascript" src="./js/structure.js"></script> -->
+	<script type="text/javascript" src="./js/engine.js"></script>
+	<script type="text/javascript" src="./js/ihm.js"></script>
 
 	<script type="text/javascript">
 		var ihm = new IHM();
 		ihm.initialize();
 	</script>
+    
 </body>
 </html>

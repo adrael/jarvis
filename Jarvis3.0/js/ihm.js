@@ -18,6 +18,15 @@ IHM.prototype.initialize = function() {
 		btn.className = 'btn btn-lg btn-info';
 		btn.innerHTML = i;
 		btn.setAttribute('onclick', "ihm.launchEngine('" + i + "')");
+
+		btn.setAttribute('data-container', 'body');
+		btn.setAttribute('data-toggle', 'popover');
+		btn.setAttribute('data-trigger', 'hover');
+		btn.setAttribute('data-placement', 'bottom');
+		btn.setAttribute('data-content', 'Réalisé par : ' + (structure[i].author || 'Unknown'));
+
+		$(btn).popover();
+
 		this.categories.appendChild(btn);
 	}
 };

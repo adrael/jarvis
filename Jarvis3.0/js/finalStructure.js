@@ -1,5 +1,7 @@
 var structure = {
-	music: {
+	musique: {
+		author: 'Raphaël MARQUES',
+
 		questions: [
 			{id: "q00", label: "Le système est-il allumé ?", value: null},			
 			{id: "q01", label: "Avez-vous vérifié la présence de haut-parleurs sur le système ?", value: null},
@@ -49,18 +51,124 @@ var structure = {
 		]
 	},
 
-	weapon: {
+	armement: {
+		author: 'Thibault GOUDOUNEIX',
+
 		questions: [],
+
 		diagnostics: []
 	},
 
-	flight: {
-		questions: [],
-		diagnostics: []
+	vol: {
+		author: 'Clément RAYMONDAUD',
+
+		questions: [
+			{id: "q00", label: "Le système est-il allumé ?", value: null},
+			{id: "q01", label: "Toutes les parties de votre armure apparaissent-elles en vert sur l'écran de contrôle ?", value: null},
+			{id: "q02", label: "Avez-vous remplacé les pièces défectueuses lors du dernier contrôle ?", value: null},
+			{id: "q03", label: "Avez-vous remplacé les pièces éjectées lors d'un précédant vol ?", value: null},
+			{id: "q04", label: "Avez-vous effectué la mise à jour des pièces du système ?", value: null},
+			{id: "q05", label: "Avez-vous les 10% d'énergie nécessaires au vol ?", value: null},
+			{id: "q06", label: "Vos propulseurs fonctionnement-ils correctement ?", value: null},
+			{id: "q07", label: "Vos propulseurs se sont-ils arrêtés net ?", value: null},
+			{id: "q08", label: "Vos propulseurs fonctionnent-ils par à coups ?", value: null},
+			{id: "q09", label: "Vos propulseurs ont-ils reçu des impacts récemment ?", value: null},
+			{id: "q10", label: "Transportez-vous une charge supérieure à 1 tonne?", value: null},
+			{id: "q11", label: "S'agit-il de personnes ?", value: null},
+			{id: "q12", label: "Avez-vous des problèmes de stabilisateurs ?", value: null},
+			{id: "q13", label: "Pensez-vous recevoir des données erronées de la part de vos instruments de mesure ?", value: null},
+			{id: "q14", label: "Etes-vous à très haute altitude ?", value: null},
+			{id: "q15", label: "Suivez-vous un itinéraire différent de celui prévu sans action de votre part (pilote automatique) ?", value: null},
+			{id: "q16", label: "Etes-vous en apesanteur ?", value: null},
+			{id: "q17", label: "La gravité environnante est-elle supérieure à la normale ?", value: null},
+			{id: "q18", label: "Etes-vous dans un trou noir ?", value: null},
+			{id: "q19", label: "Etes-vous gêné par un/des avion(s) civil(s) ?", value: null},
+			{id: "q20", label: "Vous servez-vous d'un avion pour masquer votre présence ?", value: null},
+			{id: "q21", label: "Etes-vous dans un couloir aérien fortement fréquenté ?", value: null},
+			{id: "q22", label: "Subissez-vous des tirs nourris ?", value: null},
+			{id: "q23", label: "Avez-vous été heurté/touché sans avoir été prévenu par le radar de prévention d'impacts ?", value: null},
+		],
+
+		diagnostics: [
+			{id: "d01", label: "Allumez le système et recommencez.", validFor: ["!q00"], isFinal: true},
+			{id: "d02", label: "Veuillez les remplacer.", validFor: ["!q01", "!q02"], isFinal: true},
+			{id: "d03", label: "Veuillez les remplacer.", validFor: ["!q01", "!q03"], isFinal: true},
+			{id: "d04", label: "Veuillez les faire.", validFor: ["!q01", "!q04"], isFinal: true},
+			{id: "d05", label: "Veuillez appeler monsieur Stark.", validFor: ["!q01", "q04"], isFinal: true},
+			{id: "d06", label: "Veuillez charger une batterie pleine.", validFor: ["q01", "!q05"], isFinal: true},	
+			{id: "d07", label: "Une avarie a dû se produire. Vérifiez tous les câbles entre la batterie et les propulseurs.", validFor: ["!q06", "q07"], isFinal: true},
+			{id: "d08", label: "Veuillez remplacer le vérificateur de charge de batterie.", validFor: ["!q06", "q08"], isFinal: true},
+			{id: "d09", label: "Vos propulseurs sont sûrement hors service.", validFor: ["!q06", "q09"], isFinal: true},
+			{id: "d10", label: "La charge soulevée est trop importante. Respectez la limite de 1 tonne.", validFor: ["!q06", "q10"], isFinal: true},
+			{id: "d11", label: "Coupez le câble vous retenant !!", validFor: ["!q06", "!q10"], isFinal: true},
+			{id: "d12", label: "Vérifiez qu'ils ne cherchent pas à aller dans une direction opposée à l'aide d'objets motorisés.", validFor: ["!q06", "q11"], isFinal: true},
+			{id: "d13", label: "Vérifiez que l'objet en question ne soit pas accroché à un élément fixe.", validFor: ["!q06","!q11"], isFinal: true},	
+			{id: "d14", label: "Vérifiez leur état (diode verte).", validFor: ["q06", "q12"], isFinal: true},
+			{id: "d15", label: "Vérifiez que votre tube de pitot n'est pas gelé.", validFor: ["q13", "q14"], isFinal: true},
+			{id: "d16", label: "Vérifiez qu'un insecte n'obstrue pas votre tube de pitot", validFor: ["q13", "!q14"], isFinal: true},
+			{id: "d17", label: "Réactualisez votre itinéraire.", validFor: ["!q13", "q15"], isFinal: true},
+			{id: "d18", label: "Activez vos bracelets gravité.", validFor: ["!q15", "q16"], isFinal: true},
+			{id: "d19", label: "Activez le mode gravité supérieur de vos propulseurs.", validFor: ["!q16", "q17", "!q18"], isFinal: true},
+			{id: "d20", label: "Activez le mode gravité max de vos propulseurs.", validFor: ["!q16", "q17", "q18"], isFinal: true},
+			{id: "d21", label: "Vous pouvez rencontrer des trous d'air suite au déplacement de l'avion.", validFor: ["!q17", "q19", "q20"], isFinal: true},
+			{id: "d22", label: "Veuillez opter pour un itinéraire avec une densité d'avions plus faible.", validFor: ["q19", "q21"], isFinal: true},
+			{id: "d23", label: "Nettoyez votre visière, le problème ne vient pas d'avions civils.", validFor: ["q19", "!q21"], isFinal: true},
+			{id: "d24", label: "Servez-vous du mode \"dispersion\" pour vous mettre hors de portée.", validFor: ["!q19", "q22"], isFinal: true},
+			{id: "d25", label: "Le radar peut-être endommagé. Faites-le vérifier.", validFor: ["!q22", "q23"], isFinal: true},
+			{id: "d26", label: "Vous êtes dans un environnement non prévu pour l'utilisation de l'armure. RTFM !!!", validFor: ["!q23"], isFinal: true},
+		]
 	},
 
-	power: {
-		questions: [],
-		diagnostics: []
+	énergie: {
+		author: 'Robin MANSUY',
+
+		questions: [
+			{id: "q00", label: "Le système est-il allumé ?", value: null},
+			{id: "q01", label: "Utilisez-vous un réacteur ARK ?", value: null},
+			{id: "q02", label: "Avez-vous vérifié l'état de votre réacteur ?", value: null},
+			{id: "q03", label: "Votre réacteur ARK a t'il reçu des dommages ?", value: null},
+			{id: "q04", label: "Avez-vous une/un batterie/réacteur de secours ?", value: null},
+			{id: "q05", label: "La batterie se vide t-elle trop rapidement ?", value: null},
+			{id: "q06", label: "Utilisez-vous votre réacteur/batterie depuis un certain temps ?", value: null},
+			{id: "q07", label: "Votre niveau de batterie est-il supérieur à 100% ?", value: null},
+			{id: "q08", label: "Avez-vous rechargé votre batterie ?", value: null},
+			{id: "q09", label: "Avez-vous fait la rencontre d'un dieu du Tonnerre en colère ?", value: null},
+			{id: "q10", label: "Avez-vous vérifié que votre batterie était bien connectée ?", value: null},
+			{id: "q11", label: "Avez-vous vérifié les branchements de votre batterie ?", value: null},
+			{id: "q12", label: "Est-ce que \"Le Débile\" a posé votre batterie/réacteur ?", value: null},
+			{id: "q13", label: "Votre niveau de batterie est-il faible ?", value: null},
+			{id: "q14", label: "Avez-vous utilisé plusieurs fonctionnalités de l'armure en même temps ?", value: null},
+			{id: "q15", label: "Votre disjoncteur est-il sur \"ON\" ?", value: null},
+			{id: "q16", label: "Avez-vous vérifié l'état des fusibles ?", value: null},
+			{id: "q17", label: "Votre armure est-elle en contact avec un autre appareil électrique ?", value: null},
+			{id: "q18", label: "Avez-vous reçu des décharges énergétiques de façon continue ?", value: null},
+			{id: "q19", label: "Avez-vous reçu une impulsion électromagnétique ?", value: null},
+			{id: "q20", label: "Avez-vous utilisé l'armure das un endroit trop exposé au soleil ?", value: null},
+			{id: "q21", label: "Utilisez-vous une source d'énergie terrienne ?", value: null},
+			{id: "q22", label: "Utilisez-vous une source d'énergie stable ?", value: null},
+			{id: "q23", label: "Utilisez-vous une source d'énergie périmée/désuette ?", value: null},
+		],
+
+		diagnostics: [
+			{id: "d01", label: "Allumez le système et recommencez.", validFor: ["!q00"], isFinal: true},
+			{id: "d02", label: "Remplacez votre réacteur ARK par celui de secours", validFor: ["q01", "q02", "q03", "q04"], isFinal: true},
+			{id: "d03", label: "Pensez à commander un nouveau réacteur ARK.", validFor: ["q01", "q02", "q03", "!q04"], isFinal: true},
+			{id: "d04", label: "C'est le moment de recharger les batteries !", validFor: ["q05", "q06" ], isFinal: true},
+			{id: "d05", label: "Fuyez...Vite !!!!", validFor: ["q07", "!q08", "q09" ], isFinal: true},
+			{id: "d06", label: "Appelez Tony Stark.", validFor: ["!q07", "q08", "q10" ], isFinal: true},
+			{id: "d07", label: "Appelez Pepper Potts", validFor: ["!q07", "!q08", "q10", "q11", "q12"], isFinal: true},
+			{id: "d08", label: "Faites une pause, l'armure en a besoin (et vous aussi).", validFor: ["q13", "q14"], isFinal: true},
+			{id: "d09", label: "Remplacez votre batterie/réacteur actuel par celui de secours.", validFor: ["q13", "!q14", "q04" ], isFinal: true},
+			{id: "d10", label: "Pensez à commander une/un nouveau(elle) batterie/réacteur.", validFor: ["q13", "!q14", "!q04" ], isFinal: true},
+			{id: "d11", label: "Passez votre disjoncteur sur \"OFF\"", validFor: ["q15"], isFinal: true},
+			{id: "d12", label: "Vérifiez l'état des fusibles", validFor: ["!q16" ], isFinal: true},
+			{id: "d13", label: "Essayez de vous dégager.", validFor: ["q17" ], isFinal: true},
+			{id: "d14", label: "Appelez Iron Patriot pour vous aider.", validFor: ["q18" ], isFinal: true},
+			{id: "d15", label: "Quittez l'armure manuellement.", validFor: ["q19" ], isFinal: true},
+			{id: "d16", label: "Vous devez être en train de cuire. Quittez l'armure immédiatement !", validFor: ["q20"], isFinal: true},
+			{id: "d17", label: "Utiliser une énergie non stable est dangereux, vous devriez arrêter.", validFor: ["q21", "!q22" ], isFinal: true},
+			{id: "d18", label: "Utiliser une énergie périmée/désuette est dangereux, vous devriez arrêter.", validFor: ["q21", "q22", "q23" ], isFinal: true},
+			{id: "d19", label: "Appelez Tony Stark", validFor: ["q21", "q22", "!q23" ], isFinal: true},
+		]
 	}
 };
