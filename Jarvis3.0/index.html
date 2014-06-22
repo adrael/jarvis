@@ -126,7 +126,23 @@
 							<br>
 							Nous avons choisi de distinguer très clairement quelle serait les règles portant sur les faits initiaux / normaux, de celles ayant pour but d’établir un diagnostic (terminal ou non). Cette petite modification à elle seule permet d’allèger le concepteur de règle dans son travail, mais également le moteur d’inférence.</p>
 
-							<p>En effet, ce dernier est décharger de son rôle de sélection : fini le parcours complet dans le seul but de savoir qui est initial, terminal ou encore normal, le concepteur de règle lui à mâcher le travail ! Tout en conservant la possibilité de fonctionner par chaînage avant ou arrière. Dans notre projet, seul le chaînage arrière est implémenté. Le moteur va donc regarder les diagnostics qui lui sont proposé, et va établir les questions à poser au fur et à mesure afin de valider le diagnostic choisi.</p>
+							<p>En effet, ce dernier est déchargé de son rôle de sélection : fini le parcours complet dans le seul but de savoir qui est initial, terminal ou encore normal, le concepteur de règle lui à mâcher le travail ! Tout en conservant la possibilité de fonctionner par chaînage avant ou arrière. Dans notre projet, seul le chaînage arrière est implémenté. Le moteur va donc regarder les diagnostics qui lui sont proposé, et va établir les questions à poser au fur et à mesure afin de valider le diagnostic choisi.</p>
+
+                            <p>De plus, une amélioration très utile et prisée par les concepteurs de Systèmes Experts à été implémentée dans J.A.R.V.I.S : la négation d’un fait.</p>
+
+                            <p>Dorénavant, il est possible d’exprimer une règle en fonction de la non validation d’un fait.</p>
+
+                            <p><u><strong>Exemple :</strong></u></p>
+
+                            <p class="formula"><center><strong>A&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;!B&nbsp;&nbsp;&&&nbsp;&nbsp;C&nbsp;&nbsp;)</strong></center></p>
+
+                            <p>Ce qui peut se traduire par :</p>
+
+                            <p><center><i>“La règle A est valide si B n’est pas valide et si C est valide”.</i></center></p>
+
+                            <p>Pour ce qui est de l’apprentissage non supervisé, nous n’avons pas souhaité l’implémenter, pour la simple raison que cela nécessite une base de connaissance très importante afin de permettre au système de se retrouver en parfaite autonomie.
+                            <br>
+                            Toutefois, nous avons créer une “simulation” de supervision : l’utilisateur à la pleine et entière possibilité de dire qu’il ne connait pas la réponse à la question qui lui est posée. Le système va donc lancer une analyse afin de déterminer la solution la plus viable (en réalité il ne s’agit que d’une réponse aléatoire entre oui et non).</p>
 
                         </section>
 

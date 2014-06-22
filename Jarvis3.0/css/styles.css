@@ -156,3 +156,7 @@ div#accordion {
 ol {
 	font-size: .8em;
 }
+
+.formula {
+	font-size: 2em !important;
+}
